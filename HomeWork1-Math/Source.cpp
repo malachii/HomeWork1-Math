@@ -3,59 +3,35 @@ using namespace std;
 
 int main()
 {
-	using std::cin;
-	using std::cout;
-	using std::endl;
+
+	//Write a program which prompts the user to enter a number. 
+	//Add the value they entered to itself (double it) and display the sum. 
+	//Double that value and continue to do that either 100 times or until the value 
+	//is greater than or equal to 65,535.
+
 	int value;
+	cout << "Please enter a number: ";
+	cin >> value;
+	cout << endl;
 
-	int sum = 0;
-	int counter = 1;
+	cout << value << endl;
 
+	for (int x = 1; x <= 100; x++)
 	{
-		std::cout << "Please enter a number: ";
-		std::cin >> value;
-		if (value == 0)
-		{
-		//break;
-		}
-		else if (value != 0)
-		{
-			cout << "  Double that BS: " << value * 2 << ".\n";
+		value = value + value;
 
-		}
-		std::cin >> value;
-		if (value == 0)
+		if (value < 65535)
 		{
-			//break;
-		}
-		else if (value != 0)
-		{
-			cout << "  Double that BS: " << value * 2 << ".\n";
+			cout << value << endl;
 
 		}
+		else
+		{
+			break;
+		}
 
-
-		//	cout << "Where are we now? " << value << endl;  wtf
-	}
-
-	if (value < 65535)
-	{
-		std::cout << "The number is less than 65535";
-		cin >> value;
-		cout << "  Double that BS: " << value * 2 << ".\n";
-
-
-	}
-		
-	else if (value > 65535)
-	{
-		std::cout << "The number is greater than 65535";
-	}
-	else if (value == 65535)
-	{
-		std::cout << "The number is equal to 65535";
 	}
 
 	return 0;
-}
 
+}
